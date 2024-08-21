@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopify - Products</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Our Products</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </header>
+    <main>
+        <section class="product-list">
+            <div class="product-item">
+                <h3>Product 1</h3>
+                <p>Price: $20</p>
+                <button onclick="addToCart('Product 1', 20)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <h3>Product 2</h3>
+                <p>Price: $30</p>
+                <button onclick="addToCart('Product 2', 30)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <h3>Product 3</h3>
+                <p>Price: $25</p>
+                <button onclick="addToCart('Product 3', 25)">Add to Cart</button>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
