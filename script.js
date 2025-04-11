@@ -1,15 +1,19 @@
 
-let cart = [];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function addToCart(product, price) {
     const cartItem = { product, price };
     cart.push(cartItem);
-    updateCart();
+    localStorage.setItem('cart', JSON.stringify(cart)); // Save to localStorage
+    alert(`${product} added to cart!`);
 }
 
 function updateCart() {
     const cartList = document.getElementById('cart-list');
     const cartTotal = document.getElementById('cart-total');
+
+    if (!cartList || !cartTotal) return; // Exit if not on cart.html
+
     cartList.innerHTML = '';
     let total = 0;
 
@@ -20,11 +24,8 @@ function updateCart() {
         total += item.price;
     });
 
-    cartTotal.textContent = total;
+    cartTotal.textContent = total.toFixed(2);
 }
 
-function checkout() {
-    alert('Thank you for your purchase!');
-    cart = [];
-    updateCart();
-}
+// Only run updateCart if on the cart page
+document.addEventListener('DOMContentLoaded', updateCart);
